@@ -36,3 +36,139 @@
     transform: rotate(360deg);
   }
 }
+
+body, html {
+  background: #f4f8fb;
+  margin: 0;
+  font-family: 'Segoe UI', 'Roboto', Arial, sans-serif;
+}
+
+.dashboard-bg {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.dashboard-header {
+  background: linear-gradient(90deg, #4f8cff 0%, #38c6d9 100%);
+  color: #fff;
+  padding: 2rem 0 1rem 0;
+  text-align: center;
+  box-shadow: 0 2px 8px #cce6ff33;
+}
+
+.dashboard-header h1 {
+  margin: 0;
+  font-size: 2.5rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+.dashboard-subtitle {
+  margin: 0.5rem 0 0 0;
+  font-size: 1.1rem;
+  font-weight: 400;
+  opacity: 0.95;
+}
+
+.dashboard-main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 2rem 0;
+}
+
+.dashboard-form {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 2px 16px #cce6ff33;
+  padding: 2rem 2.5rem 1.5rem 2.5rem;
+  max-width: 400px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+
+.form-group label {
+  font-weight: 500;
+  color: #2d3a4a;
+  margin-bottom: 0.1rem;
+}
+
+.dashboard-form input {
+  padding: 0.6rem 0.8rem;
+  border: 1px solid #d0d7e2;
+  border-radius: 6px;
+  font-size: 1rem;
+  outline: none;
+  transition: border 0.2s;
+}
+
+.dashboard-form input:focus {
+  border: 1.5px solid #4f8cff;
+}
+
+.dashboard-btn {
+  background: linear-gradient(90deg, #4f8cff 0%, #38c6d9 100%);
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  padding: 0.8rem 0;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  margin-top: 0.5rem;
+  transition: background 0.2s, box-shadow 0.2s;
+  box-shadow: 0 2px 8px #cce6ff22;
+}
+
+.dashboard-btn:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+.dashboard-advice {
+  background: #f6faff;
+  border-left: 4px solid #4f8cff;
+  border-radius: 8px;
+  margin-top: 2rem;
+  padding: 1.2rem 1.5rem;
+  max-width: 400px;
+  box-shadow: 0 2px 8px #cce6ff22;
+  color: #2d3a4a;
+}
+
+.dashboard-advice h3 {
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+  color: #4f8cff;
+  font-size: 1.2rem;
+}
+
+.dashboard-error {
+  color: #d32f2f;
+  background: #fff0f0;
+  border: 1px solid #ffd6d6;
+  border-radius: 6px;
+  padding: 0.7rem 1rem;
+  margin-top: 1.5rem;
+  max-width: 400px;
+  text-align: center;
+}
+
+.dashboard-footer {
+  text-align: center;
+  padding: 1.2rem 0 0.7rem 0;
+  color: #7a8ca3;
+  font-size: 1rem;
+  background: none;
+}

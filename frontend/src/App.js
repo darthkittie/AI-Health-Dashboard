@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import './App.css';
 
 function App() {
   const [form, setForm] = useState({
@@ -44,23 +45,46 @@ function App() {
   };
 
   return (
-    <div style={{ maxWidth: 500, margin: '40px auto', padding: 24, borderRadius: 8, boxShadow: '0 2px 8px #ccc', background: '#fff' }}>
-      <h2>AI Health Dashboard</h2>
-      <form onSubmit={handleSubmit} style={{ display: 'flex', flexDirection: 'column', gap: 12 }}>
-        <input name="name" placeholder="Name" value={form.name} onChange={handleChange} required />
-        <input name="age" type="number" placeholder="Age" value={form.age} onChange={handleChange} required />
-        <input name="weight" type="number" placeholder="Weight (kg)" value={form.weight} onChange={handleChange} required />
-        <input name="sleep_hours" type="number" placeholder="Sleep Hours (per night)" value={form.sleep_hours} onChange={handleChange} required />
-        <input name="exercise_minutes" type="number" placeholder="Exercise Minutes (per day)" value={form.exercise_minutes} onChange={handleChange} required />
-        <button type="submit" disabled={loading}>{loading ? 'Getting advice...' : 'Get Health Advice'}</button>
-      </form>
-      {advice && (
-        <div style={{ marginTop: 24, padding: 16, background: '#f6f6f6', borderRadius: 6 }}>
-          <h4>Personalized Wellness Tips:</h4>
-          <p>{advice}</p>
-        </div>
-      )}
-      {error && <div style={{ color: 'red', marginTop: 16 }}>{error}</div>}
+    <div className="dashboard-bg">
+      <header className="dashboard-header">
+        <h1>🩺 AI Health Dashboard</h1>
+        <p className="dashboard-subtitle">Get personalized wellness tips powered by AI</p>
+      </header>
+      <main className="dashboard-main">
+        <form className="dashboard-form" onSubmit={handleSubmit}>
+          <div className="form-group">
+            <label>Name</label>
+            <input name="name" value={form.name} onChange={handleChange} required />
+          </div>
+          <div className="form-group">
+            <label>Age</label>
+            <input name="age" type="number" value={form.age} onChange={handleChange} required />
+          </div>
+          <div className="form-group">
+            <label>Weight (kg)</label>
+            <input name="weight" type="number" value={form.weight} onChange={handleChange} required />
+          </div>
+          <div className="form-group">
+            <label>Sleep Hours (per night)</label>
+            <input name="sleep_hours" type="number" value={form.sleep_hours} onChange={handleChange} required />
+          </div>
+          <div className="form-group">
+            <label>Exercise Minutes (per day)</label>
+            <input name="exercise_minutes" type="number" value={form.exercise_minutes} onChange={handleChange} required />
+          </div>
+          <button className="dashboard-btn" type="submit" disabled={loading}>{loading ? 'Getting advice...' : 'Get Health Advice'}</button>
+        </form>
+        {advice && (
+          <div className="dashboard-advice">
+            <h3>Personalized Wellness Tips</h3>
+            <p>{advice}</p>
+          </div>
+        )}
+        {error && <div className="dashboard-error">{error}</div>}
+      </main>
+      <footer className="dashboard-footer">
+        <span>Powered by Google Gemini &middot; Made with ❤️ using React & FastAPI</span>
+      </footer>
     </div>
   );
 }
