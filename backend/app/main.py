@@ -45,7 +45,7 @@ async def get_advice(user_data: models.UserDataInput, db: Session = Depends(get_
 
     # Prepare prompt for Gemini
     prompt = (
-        f"A user named {user_data.name}, age {user_data.age}, weight {user_data.weight}kg, "
+        f"A user named {user_data.name}, age {user_data.age}, weight {user_data.weight} lbs, "
         f"sleeps {user_data.sleep_hours} hours per night and exercises {user_data.exercise_minutes} minutes per day. "
         "Give 3 general wellness tips tailored to this user."
     )

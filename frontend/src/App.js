@@ -61,7 +61,7 @@ function App() {
             <input name="age" type="number" value={form.age} onChange={handleChange} required />
           </div>
           <div className="form-group">
-            <label>Weight (kg)</label>
+            <label>Weight (lbs)</label>
             <input name="weight" type="number" value={form.weight} onChange={handleChange} required />
           </div>
           <div className="form-group">
